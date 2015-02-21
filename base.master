@@ -1,10 +1,10 @@
-﻿<%@ Master Language="VB" CodeFile="base.master.vb" Inherits="base" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="Base" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>ExamClient</title>
+    <title>ExamServer</title>
     <link href="StyleSheet.css" rel="stylesheet" />
 
     <script src="/Scripts/jquery-2.1.3.min.js"></script>
