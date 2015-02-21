@@ -1,0 +1,329 @@
+﻿
+body {
+    background-color:#FFFFFF;
+    font-family: verdana,sans-serif;
+    font-size:12px;
+    color: #000000;
+    margin:0px;
+    min-width:1024px;
+}
+
+.Main{
+    height:auto;
+}
+
+.Header{
+
+    width:100%;
+    height:110px;
+    background-color:#850825;
+
+}
+
+.HeaderBlack{
+    width:100%;
+    height:60px;
+    background-color:#808080;
+
+}
+
+h1 {
+    margin:0;
+    margin-left: 100px;
+    padding-top:10px;
+    color: #FFFFFF;
+}
+
+
+h2 {
+    font-size:18px;
+    font-weight:normal;
+    padding-top:5px;
+    margin:0;
+    margin-left: 10px;
+    color: #FFFFFF;
+}
+
+.LoginBox{
+    border:solid;
+    border-width:2px;
+    border-color:#808080;
+    background-color:#CBCBCB;
+    width:400px;
+    height:200px;
+    margin-top:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SubHeader{
+    padding:2px;
+    height:40px;
+    background-color:#808080;
+}
+
+.Row{
+    max-width: 500px;
+    height:30px;
+    float:none;
+    margin:5px;
+    margin-left:10px;
+    margin-right:10px;
+    padding:5px;
+}
+
+.RowPara{
+    max-width: 500px;
+    height:80px;
+    float:none;
+    margin:5px;
+    margin-left:10px;
+    margin-right:10px;
+    padding:5px;
+}
+
+.RowContent{
+    float:left;
+}
+
+.RowValue{
+    margin-right:5px;
+    float:right;
+}
+
+.TextBox{
+    width:220px;
+    height:20px;
+}
+
+.TextBoxPara{
+    width:220px;
+    height:70px;
+}
+
+.DropDown{
+width: 226px;
+height: 26px;
+}
+
+.Button {
+  font-family: Arial;
+  color:#FFFFFF;
+  font-size: 14px;
+  background: #850825;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border:none;
+  float:left;
+
+}
+
+.Button:hover {
+  color: #ffffff;
+  background: #356CA3;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+
+
+.Footer{
+
+
+    border-top:solid;
+    border-color:#850825;
+    border-width:5px;
+
+    margin-top:50px;
+    width:100%;
+    height:150px;
+    background-color:#808080;
+}
+
+
+.Content
+{
+    padding-bottom:5px;
+    border:solid;
+    border-color:#808080;
+    border-width:1px;
+    background-color:#CBCBCB;
+    width:800px;
+    min-height:200px;
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.WideContent
+{
+    padding-bottom:5px;
+    border:solid;
+    border-color:#808080;
+    border-width:1px;
+    background-color:#CBCBCB;
+    width:800px;
+    min-height:200px;
+    margin-top:10px;
+    margin-bottom:50px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.ContainerContent
+{
+    padding-bottom:5px;
+    width:700px;
+    min-height:220px;
+    margin-top:2px;
+    margin-bottom:2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.HalfContentLeft
+{
+    float:left;
+    padding-bottom:5px;
+    border:solid;
+    border-color:#808080;
+    border-width:1px;
+    background-color:#CBCBCB;
+    width:325px;
+    min-height:200px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.HalfContentRight
+{
+    float:right;
+    padding-bottom:5px;
+    border:solid;
+    border-color:#808080;
+    border-width:1px;
+    background-color:#CBCBCB;
+    width:325px;
+    min-height:200px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+/* Navigation Bar */
+
+#wrap	{
+	width: 100%; /* Spans the width of the page */
+	height: 50px; 
+	margin: 0; /* Ensures there is no space between sides of the screen and the menu */
+	z-index: 99; /* Makes sure that your menu remains on top of other page elements */
+	position: relative; 
+	background-color: #850825;
+
+}
+
+.navbar	{
+	height: 50px;
+    padding: 0;
+	margin: 0;
+	position: absolute; /* Ensures that the menu doesn’t affect other elements */
+	border-right: 1px solid #850825; 
+}
+
+.navbar li 	{
+	height: auto;
+	width: 120px;  /* Each menu item is 150px wide */
+	float: left;  /* This lines up the menu items horizontally */
+	text-align: center;  /* All text is placed in the center of the box */
+	list-style: none;  /* Removes the default styling (bullets) for the list */
+	font: normal bold 12px/1.2em Arial, Verdana, Helvetica;  
+	padding: 0;
+	margin: 0;
+	background-color: #850825;
+}
+
+.navbar a {
+    padding: 18px 0; /* Adds a padding on the top and bottom so the text appears centered vertically */
+    text-decoration: none; /* Removes the default hyperlink styling. */
+    color: white; /* Text color is white */
+    display: block;
+}
+
+ .navbar li:hover {background-color: #356CA3;} 
+
+
+ .navbar li ul 	{
+	display: none;  /* Hides the drop-down menu */
+	height: auto;									
+	margin: 0; /* Aligns drop-down box underneath the menu item */
+	padding: 0; /* Aligns drop-down box underneath the menu item */			
+}				
+
+.navbar li:hover ul {
+    display: block; /* Displays the drop-down box when the menu item is hovered over */
+}
+
+ .navbar li ul li {background-color: #850825;}
+ 
+ .navbar li ul li a 	{
+
+}
+				
+.navbar li ul li a:hover	{background-color: #356CA3;}
+
+/*////////////////////////////////////////////////////////////////////////////////////*/
+
+ 
+
+table, th, td {
+   margin: 5px;
+   border: 1px solid #808080;
+   width: 750px;
+   margin-top:10px;
+   margin-bottom:10px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color:#ffffff;
+   text-align:center;
+   padding:5px;
+} 
+
+th{
+    height:20px;
+    background-color:#ffffff;
+}
+
+.TableImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Search{
+
+   border: 1px solid #808080;
+   width: 748px;
+   height: 50px;
+   margin-top:10px;
+   margin-bottom:10px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color:#ffffff;
+   text-align:center;
+
+}
+
+.RowSearch{
+    margin: 12px;
+    float:left;
+}
+
