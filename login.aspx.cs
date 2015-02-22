@@ -15,7 +15,18 @@ public partial class login : System.Web.UI.Page
     protected void btnLogin_Click(object sender, EventArgs e)
     {
 
+        var Login = new WebServiceAccess();
+        
+        string strToken;
+        strToken = Login.Login(txtEmail.Text, txtPassword.Text);
 
+        if (strToken.Length > 0)
+        {
+            var objUser = Login.GetUser(strToken);
+       
+            Session.Add("User", objUser);
+            Response.Redirect("user/dashboard.aspx", false);
+        }
 
     }
 

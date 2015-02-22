@@ -15,12 +15,21 @@ public class WebServiceAccess
 
 	}
 
-    public bool Login()
+    public string Login(string strEmail, string strPassword)
     {
         var temp = new ExamServer.WebService();
-        temp.StudentLogin()
+        string strToken = "";
+        strToken = temp.StudentLogin(strEmail, strPassword);
+
+        return strToken;
+
+    }
 
 
+    public WebStudent GetUser(string strToken)
+    {
+        var temp = new ExamServer.WebService();
+        return temp.GetStudentDetails(strToken);
 
     }
 }

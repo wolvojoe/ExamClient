@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Base.master" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User_User" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainHeader" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainNavigation" Runat="Server">
+
+<div id="wrap">
+
+		  <ul class="navbar">
+			 <li><a href="dashboard.aspx">Dashboard</a></li>
+			 <li><a href="exams.aspx">Exams</a>     
+			 </li>
+			 <li><a href="results.aspx">Results</a>        
+			 </li>
+			 <li><a href="account.aspx">Account</a>    
+			 </li>
+             <li><a href="logout.aspx">Logout</a>
+			 </li>
+		  </ul>
+
+</div>
+
+</asp:Content>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
