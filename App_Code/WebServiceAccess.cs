@@ -32,4 +32,13 @@ public class WebServiceAccess
         return temp.GetStudentDetails(strToken);
 
     }
+
+
+
+    public string GetSiteName()
+    {
+        var temp = new ExamServer.WebService();
+        return temp.GetSiteName();
+
+    }
 }

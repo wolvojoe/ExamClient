@@ -29,4 +29,10 @@ public partial class User_User : System.Web.UI.MasterPage
             Response.Redirect("~/Login.aspx");
         }
     }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        WebStudent objUser = Session["User"] as WebStudent;
+
+        lblUserName.Text = objUser.StudentFirstName + " " + objUser.StudentLastName;
+    }
 }

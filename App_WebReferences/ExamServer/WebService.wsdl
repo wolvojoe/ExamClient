@@ -226,6 +226,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetSiteName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="StudentLoginSoapIn">
@@ -294,6 +304,12 @@
   <wsdl:message name="GetAnswersSoapOut">
     <wsdl:part name="parameters" element="tns:GetAnswersResponse" />
   </wsdl:message>
+  <wsdl:message name="GetSiteNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteName" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="StudentLogin">
       <wsdl:input message="tns:StudentLoginSoapIn" />
@@ -338,6 +354,10 @@
     <wsdl:operation name="GetAnswers">
       <wsdl:input message="tns:GetAnswersSoapIn" />
       <wsdl:output message="tns:GetAnswersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <wsdl:input message="tns:GetSiteNameSoapIn" />
+      <wsdl:output message="tns:GetSiteNameSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -441,6 +461,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <soap:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -536,6 +565,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAnswers">
       <soap12:operation soapAction="http://tempuri.org/GetAnswers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
