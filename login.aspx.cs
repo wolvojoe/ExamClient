@@ -25,6 +25,7 @@ public partial class login : System.Web.UI.Page
             var objUser = Login.GetUser(strToken);
        
             Session.Add("User", objUser);
+            Session.Add("Token", strToken);
             Response.Redirect("user/dashboard.aspx", false);
         }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ExamServer;
+using System.Data;
+using System.Data.SqlClient;
 
 /// <summary>
 /// Summary description for WebServiceAccess
@@ -24,6 +26,15 @@ public class WebServiceAccess
         return strToken;
 
     }
+
+    public DataTable GetExams(string strToken)
+    {
+        var temp = new ExamServer.WebService();
+        return temp.GetExams(strToken);
+
+    }
+
+
 
 
     public WebStudent GetUser(string strToken)
