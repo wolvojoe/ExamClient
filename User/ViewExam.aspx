@@ -6,9 +6,15 @@
 
     <div class="WideContent">
         <div class="SubHeader">
-            <h2>View Exam</h2>
+            <h2><asp:Label ID="lblExamName" runat="server" Text=""></asp:Label></h2>
         </div>
 
+        <div class="HalfContentRight">
+            <div class="SubHeader">
+                <h2>Exam Details</h2>
+            </div>
+
+        </div>
 
 
     </div>
