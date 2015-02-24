@@ -45,6 +45,13 @@ public class WebServiceAccess
     }
 
 
+    public WebExam GetExamDetails(string strToken, int intExamID)
+    {
+        var ExamDetails = new ExamServer.WebService();
+        return ExamDetails.GetExam(strToken, intExamID);
+    }
+
+
 
     public string GetSiteName()
     {

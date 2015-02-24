@@ -66,6 +66,42 @@
           <s:element minOccurs="1" maxOccurs="1" name="QuestionTypeID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetExam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intExamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExamResult" type="tns:WebExam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebExam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExamID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExamName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamDateCreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExamDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamOpenDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamOpenDateEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamClosedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamClosedDateEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamTimeLimit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamTimeLimitEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamAttemptsAllowed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamQuestionsOrdered" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamShuffleAnswers" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamLearningMode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExamPassword" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfQuestions" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="StartExam">
         <s:complexType>
           <s:sequence>
@@ -116,6 +152,16 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="InsertAnswerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteNameResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -227,16 +273,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetSiteName">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetSiteNameResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetSiteNameResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="StudentLoginSoapIn">
@@ -257,6 +293,12 @@
   <wsdl:message name="GetQuestionSoapOut">
     <wsdl:part name="parameters" element="tns:GetQuestionResponse" />
   </wsdl:message>
+  <wsdl:message name="GetExamSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExam" />
+  </wsdl:message>
+  <wsdl:message name="GetExamSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExamResponse" />
+  </wsdl:message>
   <wsdl:message name="StartExamSoapIn">
     <wsdl:part name="parameters" element="tns:StartExam" />
   </wsdl:message>
@@ -274,6 +316,12 @@
   </wsdl:message>
   <wsdl:message name="InsertAnswerSoapOut">
     <wsdl:part name="parameters" element="tns:InsertAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteName" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteNameResponse" />
   </wsdl:message>
   <wsdl:message name="GetSubjectsSoapIn">
     <wsdl:part name="parameters" element="tns:GetSubjects" />
@@ -305,12 +353,6 @@
   <wsdl:message name="GetAnswersSoapOut">
     <wsdl:part name="parameters" element="tns:GetAnswersResponse" />
   </wsdl:message>
-  <wsdl:message name="GetSiteNameSoapIn">
-    <wsdl:part name="parameters" element="tns:GetSiteName" />
-  </wsdl:message>
-  <wsdl:message name="GetSiteNameSoapOut">
-    <wsdl:part name="parameters" element="tns:GetSiteNameResponse" />
-  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="StudentLogin">
       <wsdl:input message="tns:StudentLoginSoapIn" />
@@ -324,6 +366,10 @@
       <wsdl:input message="tns:GetQuestionSoapIn" />
       <wsdl:output message="tns:GetQuestionSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetExam">
+      <wsdl:input message="tns:GetExamSoapIn" />
+      <wsdl:output message="tns:GetExamSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="StartExam">
       <wsdl:input message="tns:StartExamSoapIn" />
       <wsdl:output message="tns:StartExamSoapOut" />
@@ -335,6 +381,10 @@
     <wsdl:operation name="InsertAnswer">
       <wsdl:input message="tns:InsertAnswerSoapIn" />
       <wsdl:output message="tns:InsertAnswerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <wsdl:input message="tns:GetSiteNameSoapIn" />
+      <wsdl:output message="tns:GetSiteNameSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSubjects">
       <wsdl:input message="tns:GetSubjectsSoapIn" />
@@ -355,10 +405,6 @@
     <wsdl:operation name="GetAnswers">
       <wsdl:input message="tns:GetAnswersSoapIn" />
       <wsdl:output message="tns:GetAnswersSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSiteName">
-      <wsdl:input message="tns:GetSiteNameSoapIn" />
-      <wsdl:output message="tns:GetSiteNameSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -390,6 +436,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetExam">
+      <soap:operation soapAction="http://tempuri.org/GetExam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="StartExam">
       <soap:operation soapAction="http://tempuri.org/StartExam" style="document" />
       <wsdl:input>
@@ -410,6 +465,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertAnswer">
       <soap:operation soapAction="http://tempuri.org/InsertAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <soap:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -462,15 +526,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetSiteName">
-      <soap:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -501,6 +556,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetExam">
+      <soap12:operation soapAction="http://tempuri.org/GetExam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="StartExam">
       <soap12:operation soapAction="http://tempuri.org/StartExam" style="document" />
       <wsdl:input>
@@ -521,6 +585,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertAnswer">
       <soap12:operation soapAction="http://tempuri.org/InsertAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteName">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -566,15 +639,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAnswers">
       <soap12:operation soapAction="http://tempuri.org/GetAnswers" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSiteName">
-      <soap12:operation soapAction="http://tempuri.org/GetSiteName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

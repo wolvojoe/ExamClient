@@ -14,6 +14,12 @@
                 <h2>Exam Details</h2>
             </div>
 
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+
         </div>
 
 
