@@ -9,6 +9,15 @@
             <h2><asp:Label ID="lblExamName" runat="server" Text=""></asp:Label></h2>
         </div>
 
+        <div class="TwoThirdContentLeft">
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+        </div>
+
+
         <div class="HalfContentRight">
             <div class="SubHeader">
                 <h2>Exam Details</h2>
@@ -16,7 +25,66 @@
 
             <div class="Row">
                 <div class="RowContent">
-                    <asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblOpenDate" runat="server" Text="Open Date:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblOpenDateResult" runat="server"></asp:Label>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblClosedDate" runat="server" Text="Closed Date:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblClosedDateResult" runat="server"></asp:Label>
+                </div>
+            </div>
+
+
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblTimeLimit" runat="server" Text="Time Limit:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblTimeLimitResult" runat="server"></asp:Label>
+                </div>
+            </div>
+
+
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblNumberOfAttempts" runat="server" Text="Number of Attempts Allowed:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblNumberOfAttemptsResult" runat="server"></asp:Label>
+                </div>
+            </div>
+
+
+
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblTrainingMode" runat="server" Text="Training Mode Enabled:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblTrainingModeEnabled" runat="server"></asp:Label>
+                </div>
+            </div>
+
+
+            <div class="Row">
+                <div class="RowContent">
+                    <asp:Label ID="lblPassword" runat="server" Text="Password Required:"></asp:Label>
+                </div>
+
+                <div class="RowValue">
+                    <asp:Label ID="lblPasswordRequired" runat="server"></asp:Label>
                 </div>
             </div>
 

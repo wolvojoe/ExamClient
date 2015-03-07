@@ -18,6 +18,14 @@ public partial class User_TakeExam : System.Web.UI.Page
         objExam = objWebservice.GetExamDetails(strToken, ExamID);
 
         lblExamName.Text = objExam.ExamName;
+        lblOpenDateResult.Text = Convert.ToString(objExam.ExamOpenDate);
+        lblClosedDateResult.Text = Convert.ToString(objExam.ExamClosedDate);
+        lblTimeLimitResult.Text = Convert.ToString(objExam.ExamTimeLimit);
+
+        lblNumberOfAttemptsResult.Text = Convert.ToString(objExam.ExamAttemptsAllowed);
+        lblTrainingModeEnabled.Text = Convert.ToString(objExam.ExamLearningMode);
+        lblPasswordRequired.Text = Convert.ToString(objExam.ExamPassword);
+
         lblDescription.Text = objExam.ExamDescription;
     }
 }
