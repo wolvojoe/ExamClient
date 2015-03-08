@@ -102,6 +102,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="NumberOfQuestions" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ValidatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intExamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidatePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="StartExam">
         <s:complexType>
           <s:sequence>
@@ -299,6 +315,12 @@
   <wsdl:message name="GetExamSoapOut">
     <wsdl:part name="parameters" element="tns:GetExamResponse" />
   </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePassword" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePasswordResponse" />
+  </wsdl:message>
   <wsdl:message name="StartExamSoapIn">
     <wsdl:part name="parameters" element="tns:StartExam" />
   </wsdl:message>
@@ -370,6 +392,10 @@
       <wsdl:input message="tns:GetExamSoapIn" />
       <wsdl:output message="tns:GetExamSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <wsdl:input message="tns:ValidatePasswordSoapIn" />
+      <wsdl:output message="tns:ValidatePasswordSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="StartExam">
       <wsdl:input message="tns:StartExamSoapIn" />
       <wsdl:output message="tns:StartExamSoapOut" />
@@ -438,6 +464,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetExam">
       <soap:operation soapAction="http://tempuri.org/GetExam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap:operation soapAction="http://tempuri.org/ValidatePassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -558,6 +593,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetExam">
       <soap12:operation soapAction="http://tempuri.org/GetExam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap12:operation soapAction="http://tempuri.org/ValidatePassword" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

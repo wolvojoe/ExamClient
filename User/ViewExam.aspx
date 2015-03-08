@@ -10,11 +10,36 @@
         </div>
 
         <div class="TwoThirdContentLeft">
+
             <div class="Row">
                 <div class="RowContent">
                     <asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
                 </div>
             </div>
+
+            <asp:Panel ID="pnlPassword" runat="server" Visible="false">
+                <div class="Row">
+                    <div class="RowContent">
+                        <asp:Label ID="lblExamPassword" runat="server" Text="Password:"></asp:Label>
+                    </div>
+
+
+                    <div class="RowValue">
+                        <asp:TextBox ID="txtExamPassword" runat="server" required="true"></asp:TextBox>
+                    </div>
+                </div>
+            </asp:Panel>
+
+            <div class="Row">
+                <div class="RowValue">
+                    <asp:Button ID="btnStartExam" runat="server" Text="Start" class="Button" OnClick="btnStart_Click" />
+                </div>
+            </div>
+
+
+
+
+
         </div>
 
 

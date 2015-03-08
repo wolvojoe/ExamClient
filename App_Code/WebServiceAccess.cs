@@ -35,13 +35,10 @@ public class WebServiceAccess
     }
 
 
-
-
     public WebStudent GetUser(string strToken)
     {
         var temp = new ExamServer.WebService();
         return temp.GetStudentDetails(strToken);
-
     }
 
 
@@ -50,6 +47,21 @@ public class WebServiceAccess
         var ExamDetails = new ExamServer.WebService();
         return ExamDetails.GetExam(strToken, intExamID);
     }
+
+
+    public bool ValidateExam(string strToken, int intExamID, string strPassword)
+    {
+        var temp = new ExamServer.WebService();
+        return temp.ValidatePassword(strToken, intExamID, strPassword);
+    }
+
+
+    public int StartExam(string strToken, int intExam)
+    {
+        var ExamDetails = new ExamServer.WebService();
+        return ExamDetails.StartExam(strToken, intExam);
+    }
+
 
 
 
