@@ -48,6 +48,13 @@ public class WebServiceAccess
         return ExamDetails.GetExam(strToken, intExamID);
     }
 
+    public Result GetResultDetails(string strToken, int intResultID)
+    {
+        var ResultDetails = new ExamServer.WebService();
+        return ResultDetails.GetResult(strToken, intResultID);
+    }
+
+
 
     public bool ValidateExam(string strToken, int intExamID, string strPassword)
     {
@@ -62,8 +69,17 @@ public class WebServiceAccess
         return ExamDetails.StartExam(strToken, intExam);
     }
 
+    public Question GetNextQuestion(string strToken, int intResult)
+    {
+        var ExamDetails = new ExamServer.WebService();
+        return ExamDetails.GetNextQuestion(strToken, intResult);
+    }
 
-
+    public List<WebAnswer> GetAnswersList(string strToken, int intQuestion)
+    {
+        var ExamDetails = new ExamServer.WebService();
+        return ExamDetails.GetAnswersList(strToken, intQuestion).ToList();
+    }
 
     public string GetSiteName()
     {

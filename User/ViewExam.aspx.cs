@@ -57,7 +57,7 @@ public partial class User_TakeExam : System.Web.UI.Page
         {
             int ExamAttemptID;
             ExamAttemptID = objWebservice.StartExam(strToken, ExamID);
-            Response.Redirect("user/examattempt.aspx?id=" + Convert.ToString(ExamAttemptID), false);
+            Response.Redirect("examquestion.aspx?id=" + Convert.ToString(ExamAttemptID), false);
         }
         else
         {
